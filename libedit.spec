@@ -4,7 +4,7 @@
 #
 Name     : libedit
 Version  : 20150325
-Release  : 3
+Release  : 4
 URL      : http://thrysoee.dk/editline/libedit-20150325-3.1.tar.gz
 Source0  : http://thrysoee.dk/editline/libedit-20150325-3.1.tar.gz
 Summary  : command line editor library provides generic line editing, history, and tokenization functions.

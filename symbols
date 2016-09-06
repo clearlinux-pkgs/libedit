@@ -148,6 +148,7 @@ libedit.so.0:history_get
 libedit.so.0:history_get_history_state
 libedit.so.0:history_init
 libedit.so.0:history_is_stifled
+libedit.so.0:history_list
 libedit.so.0:history_search
 libedit.so.0:history_search_pos
 libedit.so.0:history_search_prefix

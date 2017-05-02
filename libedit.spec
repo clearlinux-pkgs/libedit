@@ -4,7 +4,7 @@
 #
 Name     : libedit
 Version  : 20160903
-Release  : 6
+Release  : 7
 URL      : http://thrysoee.dk/editline/libedit-20160903-3.1.tar.gz
 Source0  : http://thrysoee.dk/editline/libedit-20160903-3.1.tar.gz
 Summary  : command line editor library provides generic line editing, history, and tokenization functions.

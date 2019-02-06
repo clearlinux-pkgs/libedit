@@ -4,7 +4,7 @@
 #
 Name     : libedit
 Version  : 20181209.3.1
-Release  : 1
+Release  : 2
 URL      : https://www.thrysoee.dk/editline/libedit-20181209-3.1.tar.gz
 Source0  : https://www.thrysoee.dk/editline/libedit-20181209-3.1.tar.gz
 Summary  : command line editor library provides generic line editing, history, and tokenization functions.
@@ -62,7 +62,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1549489822
+export SOURCE_DATE_EPOCH=1549490510
 %configure --disable-static
 make  %{?_smp_mflags}
 
@@ -74,7 +74,7 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make VERBOSE=1 V=1 %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1549489822
+export SOURCE_DATE_EPOCH=1549490510
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libedit
 cp COPYING %{buildroot}/usr/share/package-licenses/libedit/COPYING
@@ -85,6 +85,7 @@ cp COPYING %{buildroot}/usr/share/package-licenses/libedit/COPYING
 
 %files dev
 %defattr(-,root,root,-)
+%exclude /usr/share/man/man3/history.3
 /usr/include/*.h
 /usr/include/editline/readline.h
 /usr/lib64/libedit.so
@@ -114,7 +115,6 @@ cp COPYING %{buildroot}/usr/share/package-licenses/libedit/COPYING
 /usr/share/man/man3/el_wparse.3
 /usr/share/man/man3/el_wpush.3
 /usr/share/man/man3/el_wset.3
-/usr/share/man/man3/history.3
 /usr/share/man/man3/history_end.3
 /usr/share/man/man3/history_init.3
 /usr/share/man/man3/history_w.3

@@ -35,6 +35,7 @@ libedit.so.0:el_wpush
 libedit.so.0:el_wset
 libedit.so.0:filename_completion_function
 libedit.so.0:fn_complete
+libedit.so.0:fn_complete2
 libedit.so.0:fn_display_match_list
 libedit.so.0:fn_filename_completion_function
 libedit.so.0:fn_tilde_expand
@@ -58,8 +59,6 @@ libedit.so.0:history_truncate_file
 libedit.so.0:history_w
 libedit.so.0:history_wend
 libedit.so.0:history_winit
-libedit.so.0:libedit_strlcat
-libedit.so.0:libedit_strlcpy
 libedit.so.0:next_history
 libedit.so.0:nvis
 libedit.so.0:previous_history
@@ -111,6 +110,8 @@ libedit.so.0:snvis
 libedit.so.0:stifle_history
 libedit.so.0:stravis
 libedit.so.0:strenvisx
+libedit.so.0:strlcat
+libedit.so.0:strlcpy
 libedit.so.0:strnunvis
 libedit.so.0:strnunvisx
 libedit.so.0:strnvis

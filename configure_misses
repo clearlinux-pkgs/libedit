@@ -1,7 +1,7 @@
 Configure miss: if you want wide-character code
 Configure miss: struct dirent.d_namlen
-Configure miss: vis
-Configure miss: strvis
 Configure miss: strunvis
+Configure miss: strvis
 Configure miss: unvis
+Configure miss: vis
 Configure miss: whether getpwnam_r and getpwuid_r are posix _draft_ like

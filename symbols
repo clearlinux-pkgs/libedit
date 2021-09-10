@@ -1,5 +1,6 @@
 libedit.so.0:_el_fn_complete
 libedit.so.0:_rl_abort_internal
+libedit.so.0:_rl_erase_entire_line
 libedit.so.0:_rl_qsort_string_compare
 libedit.so.0:add_history
 libedit.so.0:append_history
@@ -39,6 +40,7 @@ libedit.so.0:fn_complete2
 libedit.so.0:fn_display_match_list
 libedit.so.0:fn_filename_completion_function
 libedit.so.0:fn_tilde_expand
+libedit.so.0:free_history_entry
 libedit.so.0:get_history_event
 libedit.so.0:history
 libedit.so.0:history_arg_extract
@@ -66,6 +68,7 @@ libedit.so.0:read_history
 libedit.so.0:readline
 libedit.so.0:remove_history
 libedit.so.0:replace_history_entry
+libedit.so.0:rl_abort
 libedit.so.0:rl_add_defun
 libedit.so.0:rl_bind_key
 libedit.so.0:rl_bind_key_in_map
@@ -75,7 +78,9 @@ libedit.so.0:rl_callback_read_char
 libedit.so.0:rl_cleanup_after_signal
 libedit.so.0:rl_complete
 libedit.so.0:rl_completion_matches
+libedit.so.0:rl_crlf
 libedit.so.0:rl_deprep_terminal
+libedit.so.0:rl_ding
 libedit.so.0:rl_display_match_list
 libedit.so.0:rl_echo_signal_char
 libedit.so.0:rl_filename_completion_function
@@ -102,6 +107,7 @@ libedit.so.0:rl_reset_terminal
 libedit.so.0:rl_resize_terminal
 libedit.so.0:rl_set_keyboard_input_timeout
 libedit.so.0:rl_set_keymap
+libedit.so.0:rl_set_keymap_name
 libedit.so.0:rl_set_prompt
 libedit.so.0:rl_set_screen_size
 libedit.so.0:rl_stuff_char

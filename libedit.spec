@@ -4,7 +4,7 @@
 #
 Name     : libedit
 Version  : 20210910.3.1
-Release  : 17
+Release  : 18
 URL      : https://www.thrysoee.dk/editline/libedit-20210910-3.1.tar.gz
 Source0  : https://www.thrysoee.dk/editline/libedit-20210910-3.1.tar.gz
 Summary  : command line editor library provides generic line editing, history, and tokenization functions.
@@ -64,7 +64,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1631308138
+export SOURCE_DATE_EPOCH=1637608064
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -84,13 +84,13 @@ export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
 
 %install
-export SOURCE_DATE_EPOCH=1631308138
+export SOURCE_DATE_EPOCH=1637608064
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libedit
 cp %{_builddir}/libedit-20210910-3.1/COPYING %{buildroot}/usr/share/package-licenses/libedit/23d54f3ac85bc67716a2591c090796b0937433eb
 %make_install
 ## Remove excluded files
-rm -f %{buildroot}/usr/share/man/man3/history.3
+rm -f %{buildroot}*/usr/share/man/man3/history.3
 
 %files
 %defattr(-,root,root,-)

@@ -1,7 +1,9 @@
 Configure miss: if you want wide-character code
+Configure miss: reallocarr
 Configure miss: struct dirent.d_namlen
 Configure miss: strunvis
 Configure miss: strvis
 Configure miss: unvis
 Configure miss: vis
 Configure miss: whether getpwnam_r and getpwuid_r are posix _draft_ like
+Configure miss: x86_64-generic-linux-gnu-file

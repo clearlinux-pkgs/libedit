@@ -12,6 +12,7 @@ libedit.so.0:current_history
 libedit.so.0:el_beep
 libedit.so.0:el_cursor
 libedit.so.0:el_deletestr
+libedit.so.0:el_deletestr1
 libedit.so.0:el_end
 libedit.so.0:el_get
 libedit.so.0:el_getc
@@ -22,6 +23,7 @@ libedit.so.0:el_insertstr
 libedit.so.0:el_line
 libedit.so.0:el_parse
 libedit.so.0:el_push
+libedit.so.0:el_replacestr
 libedit.so.0:el_reset
 libedit.so.0:el_resize
 libedit.so.0:el_set
@@ -33,6 +35,7 @@ libedit.so.0:el_winsertstr
 libedit.so.0:el_wline
 libedit.so.0:el_wparse
 libedit.so.0:el_wpush
+libedit.so.0:el_wreplacestr
 libedit.so.0:el_wset
 libedit.so.0:filename_completion_function
 libedit.so.0:fn_complete
@@ -66,6 +69,7 @@ libedit.so.0:nvis
 libedit.so.0:previous_history
 libedit.so.0:read_history
 libedit.so.0:readline
+libedit.so.0:reallocarr
 libedit.so.0:remove_history
 libedit.so.0:replace_history_entry
 libedit.so.0:rl_abort
@@ -78,7 +82,9 @@ libedit.so.0:rl_callback_read_char
 libedit.so.0:rl_cleanup_after_signal
 libedit.so.0:rl_complete
 libedit.so.0:rl_completion_matches
+libedit.so.0:rl_copy_text
 libedit.so.0:rl_crlf
+libedit.so.0:rl_delete_text
 libedit.so.0:rl_deprep_terminal
 libedit.so.0:rl_ding
 libedit.so.0:rl_display_match_list
@@ -95,6 +101,7 @@ libedit.so.0:rl_insert
 libedit.so.0:rl_insert_text
 libedit.so.0:rl_kill_text
 libedit.so.0:rl_make_bare_keymap
+libedit.so.0:rl_message
 libedit.so.0:rl_newline
 libedit.so.0:rl_on_new_line
 libedit.so.0:rl_parse_and_bind
@@ -102,9 +109,13 @@ libedit.so.0:rl_prep_terminal
 libedit.so.0:rl_read_init_file
 libedit.so.0:rl_read_key
 libedit.so.0:rl_redisplay
+libedit.so.0:rl_replace_line
 libedit.so.0:rl_reset_after_signal
 libedit.so.0:rl_reset_terminal
 libedit.so.0:rl_resize_terminal
+libedit.so.0:rl_restore_prompt
+libedit.so.0:rl_save_prompt
+libedit.so.0:rl_set_key
 libedit.so.0:rl_set_keyboard_input_timeout
 libedit.so.0:rl_set_keymap
 libedit.so.0:rl_set_keymap_name

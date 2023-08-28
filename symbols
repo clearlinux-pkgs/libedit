@@ -1,4 +1,5 @@
 libedit.so.0:_el_fn_complete
+libedit.so.0:_el_fn_sh_complete
 libedit.so.0:_rl_abort_internal
 libedit.so.0:_rl_erase_entire_line
 libedit.so.0:_rl_qsort_string_compare
@@ -127,8 +128,6 @@ libedit.so.0:snvis
 libedit.so.0:stifle_history
 libedit.so.0:stravis
 libedit.so.0:strenvisx
-libedit.so.0:strlcat
-libedit.so.0:strlcpy
 libedit.so.0:strnunvis
 libedit.so.0:strnunvisx
 libedit.so.0:strnvis

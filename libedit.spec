@@ -4,10 +4,10 @@
 # Using build pattern: configure
 #
 Name     : libedit
-Version  : 20221030.3.1
-Release  : 21
-URL      : https://www.thrysoee.dk/editline/libedit-20221030-3.1.tar.gz
-Source0  : https://www.thrysoee.dk/editline/libedit-20221030-3.1.tar.gz
+Version  : 20230828.3.1
+Release  : 22
+URL      : https://www.thrysoee.dk/editline/libedit-20230828-3.1.tar.gz
+Source0  : https://www.thrysoee.dk/editline/libedit-20230828-3.1.tar.gz
 Summary  : command line editor library provides generic line editing, history, and tokenization functions.
 Group    : Development/Tools
 License  : BSD-3-Clause BSD-4-Clause-UC
@@ -61,15 +61,18 @@ man components for the libedit package.
 
 
 %prep
-%setup -q -n libedit-20221030-3.1
-cd %{_builddir}/libedit-20221030-3.1
+%setup -q -n libedit-20230828-3.1
+cd %{_builddir}/libedit-20230828-3.1
+pushd ..
+cp -a libedit-20230828-3.1 buildavx2
+popd
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1689801536
+export SOURCE_DATE_EPOCH=1693248778
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -81,21 +84,37 @@ export CXXFLAGS="$CXXFLAGS -O3 -fdebug-types-section -femit-struct-debug-baseonl
 %configure --disable-static
 make  %{?_smp_mflags}
 
+unset PKG_CONFIG_PATH
+pushd ../buildavx2/
+export CFLAGS="$CFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export CXXFLAGS="$CXXFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FFLAGS="$FFLAGS -m64 -march=x86-64-v3 -Wl,-z,x86-64-v3"
+export FCFLAGS="$FCFLAGS -m64 -march=x86-64-v3"
+export LDFLAGS="$LDFLAGS -m64 -march=x86-64-v3"
+%configure --disable-static
+make  %{?_smp_mflags}
+popd
 %check
 export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 make %{?_smp_mflags} check
+cd ../buildavx2;
+make %{?_smp_mflags} check || :
 
 %install
-export SOURCE_DATE_EPOCH=1689801536
+export SOURCE_DATE_EPOCH=1693248778
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/libedit
-cp %{_builddir}/libedit-20221030-3.1/COPYING %{buildroot}/usr/share/package-licenses/libedit/23d54f3ac85bc67716a2591c090796b0937433eb || :
+cp %{_builddir}/libedit-20230828-3.1/COPYING %{buildroot}/usr/share/package-licenses/libedit/23d54f3ac85bc67716a2591c090796b0937433eb || :
+pushd ../buildavx2/
+%make_install_v3
+popd
 %make_install
 ## Remove excluded files
 rm -f %{buildroot}*/usr/share/man/man3/history.3
+/usr/bin/elf-move.py avx2 %{buildroot}-v3 %{buildroot} %{buildroot}/usr/share/clear/filemap/filemap-%{name}
 
 %files
 %defattr(-,root,root,-)
@@ -149,8 +168,9 @@ rm -f %{buildroot}*/usr/share/man/man3/history.3
 
 %files lib
 %defattr(-,root,root,-)
+/V3/usr/lib64/libedit.so.0.0.72
 /usr/lib64/libedit.so.0
-/usr/lib64/libedit.so.0.0.70
+/usr/lib64/libedit.so.0.0.72
 
 %files license
 %defattr(0644,root,root,0755)

@@ -14,5 +14,3 @@ Configure miss: vis
 Configure miss: vis
 Configure miss: whether getpwnam_r and getpwuid_r are posix _draft_ like
 Configure miss: whether getpwnam_r and getpwuid_r are posix _draft_ like
-Configure miss: x86_64-generic-linux-gnu-file
-Configure miss: x86_64-generic-linux-gnu-file
